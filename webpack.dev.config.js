@@ -14,6 +14,15 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader',
+              },
+            //   {
+            //     test: /\.js$/,
+            //     loader: 'babel-loader',
+            //     exclude: '/node_modules/'
+            //   },
             // {
             //     test: /\.css$/,
             //     loader: 'style-loader!css-loader',
@@ -65,5 +74,11 @@ module.exports = {
         hot: true,
         port: 8080,
         open: true,
-    }
+    },
+    resolve: {
+        extensions: ['.js', '.vue', '.json'],
+        alias: {
+          'vue$': 'vue/dist/vue.js',
+        }
+      },
 }
